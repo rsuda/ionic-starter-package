@@ -24,3 +24,396 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+ion-badge{
+    float: right !important;
+    font-weight: 900 !important;
+    margin-top:2px !important;
+    background-color: var(--primary-dark);
+    border-radius: 100%;
+    padding: 6px 9px;
+  }
+
+  ion-button{
+    --border-radius: 6px !important;
+    --background: #3369B4;
+    margin: 16px;
+    text-transform: capitalize;
+    --box-shadow: none;
+  }
+
+  ion-card{
+    padding: 12px;
+    ion-card-header{
+      font-weight: medium;
+      text-transform: capitalize;
+      ion-card-title{
+        font-size: 16px;
+      }
+    }
+    ion-card-content{
+      text-transform: none;
+      font-size: 14px;
+      padding: 0px !important;
+    }
+  }
+
+  ion-checkbox{
+    --border-style: solid;
+    --border-radius: 5px !important;
+  }
+
+  ion-chip {
+    &.popular{
+      background-color: var(--primary-dark);
+    }
+
+    &.recent{
+      background-color: var(--secondary);
+    }
+
+    color: white;
+    font-weight: 500;
+    font-size: 18px;
+    margin: 14px auto;
+    min-width: 80px;
+  }
+
+  ion-datetime {
+    border-bottom: 1px solid var(--body-text);
+    margin-bottom: 12px;
+    color: var(--body-text);
+    font-size: 21px;
+    font-weight: 500;
+    padding-inline-start: 0px;
+    padding: 0px;
+    --background: #EDEDED;
+  }
+
+  //ion-fab { }
+
+  ion-input {
+    border-bottom: 1px solid var(--body-text);
+    margin-bottom: 12px;
+    color: var(--body-text);
+    font-size: 21px;
+    font-weight: 500;
+    padding-inline-start: 0px;
+  }
+
+  //ion-radio { }
+
+  ion-searchbar{
+
+    .searchbar-input-container {
+      input{
+          text-align: left !important;
+      }
+  }
+
+    .searchbar-input {
+      border: 1px solid #D5D5D5 !important;
+      box-shadow: none !important;
+      border-radius: 5px !important;
+      padding-left: 16px !important;
+  }
+
+
+
+    ion-icon {
+      right: 16px !important;
+      left: auto !important;
+      opacity: .38;
+      font-size: 40px !important;
+    }
+
+    ion-label {
+      left: 16px !important;
+      right: auto !important;
+    }
+
+    button{
+      display: none !important;
+    }
+
+  }
+
+  ion-segment{
+    height: 50px;
+    --background: white;
+    border: 1px solid #e8e8e8;
+  }
+
+  ion-segment-button {
+    --border-color: #e8e8e8 !important;
+    text-transform: uppercase;
+    --color:#2d2e87 !important;
+    --indicator-color: #3369B4 !important;
+    --indicator-background: white !important;
+    --color-checked: white;
+    --color-hover: #2d2e87 !important;
+  }
+
+  ion-spinner {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-right: -50%;
+      transform: translate(-50%, -50%);
+  }
+
+  //ion-toggle { }
+
+  ion-toolbar {
+    padding-top: constant(safe-area-inset-top);
+    padding-top: env(safe-area-inset-top);
+  }
+  /**
+  * End of revamped Style Sheet
+  *
+  */
+
+body {
+    background: none !important;
+  }
+  .ion-safe-area-top {
+    padding-top: constant(safe-area-inset-top);
+    padding-top: env(safe-area-inset-top);
+  }
+
+  .edge-card {
+    min-height: 250px;
+    border-radius: 0px;
+  }
+
+  .hide-scrollbar {
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none; // IE 10+
+    scrollbar-width: none; // Firefox
+    scroll-behavior: smooth;
+
+    &::-webkit-scrollbar {
+      display: none; // Safari and Chrome
+    }
+  }
+  :root {
+    ion-img {
+      /**
+       * Bug fix for:
+       * https://github.com/ionic-team/ionic/issues/18734
+       */
+      min-height: 1px !important;
+    }
+  }
+  // Center spinner in parent view
+  //
+  ion-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+  }
+
+  ion-modal.ion-custom-model {
+    --height: auto;
+    align-items: center !important;
+    background: rgba(0, 0, 0, 0.5) !important;
+
+    .modal-wrapper {
+      width: 95vw;
+      height: auto !important;
+      .ion-page {
+        position: relative;
+        contain: content;
+        max-height: 90vh;
+        .modal-content {
+          overflow: auto;
+        }
+      }
+    }
+  }
+
+  // Bottom drawer styling
+  //
+
+  .pane {
+    border-radius: 0px !important;
+  }
+
+  .draggable {
+    height: 44px;
+    margin: 0px !important;
+    padding: 0px !important;
+  }
+
+  // CSS Needed to resize Trimble Maps Markers
+  //
+  .trimblemaps-marker {
+    width: 27px;
+    height: 41px;
+  }
+
+  .trimblemaps-marker-anchor-center {
+    width: 27px;
+    height: 41px;
+  }
+
+  .trimblemaps-canvas {
+    width: 100% !important;
+  }
+
+  // Dragula CSS
+  //
+  .gu-mirror {
+    position: fixed !important;
+    margin: 0 !important;
+    z-index: 9999 !important;
+    opacity: 0.8;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+    filter: alpha(opacity=80);
+    pointer-events: none;
+  }
+  /* high-performance display:none; helper */
+  .gu-hide {
+    left: -9999px !important;
+  }
+  /* added to mirrorContainer (default = body) while dragging */
+  .gu-unselectable {
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+  }
+  /* added to the source element while its mirror is dragged */
+  .gu-transit {
+    opacity: 0.2;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+    filter: alpha(opacity=20);
+  }
+
+  .ion-confirm-alert .alert-button{
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  .ion-confirm-alert .alert-button-inner{
+    display: block !important;
+  }
+
+  // UserVoice Widget bottom offset for our tab bar
+  //
+
+  .uv-bottom-right {
+    /*bottom: 108px !important;*/
+    bottom: 108px !important;
+    right: 24px !important;
+  }
+
+  .uv-icon svg {
+    // height: 24px !important;
+  }
+
+  ion-button {
+    --box-shadow: none;
+  }
+
+  .ion-icon-chevron {
+    font-size: 24px;
+    color: var(--body-text);
+  }
+
+  // Cupertino fix
+  //
+
+  .move {
+    margin: 10px auto !important;
+  }
+
+  // Circle Progress for Safety Card
+  .safety-card circle-progress svg {
+    max-height: 213px !important;
+  }
+
+  // Circle progress for safety card in customize screen
+  .customize-cards .safety-card circle-progress svg {
+    max-height: 165px !important;
+  }
+
+  // Werner Style Classes
+  //
+
+  .werner-button {
+    border-radius: 4px;
+    text-transform: uppercase;
+    padding: 13px 16px;
+    display: block;
+    font-weight: 500;
+    text-align: center;
+
+    &.primary {
+      background-color: var(--primary);
+      color: white;
+    }
+
+    &.outline {
+      background-color: white;
+      border: 1px solid var(--primary);
+      color: var(--primary);
+    }
+
+    &.text {
+      background-color: transparent;
+      text-transform: uppercase;
+      color: var(--primary);
+    }
+  }
+
+
+  // Werner Edge Styles
+  //
+
+  .edge-label {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: normal !important;
+    text-transform: uppercase;
+    color: var(--label-text) !important;
+  }
+
+  .edge-value {
+    font-weight: 500;
+  }
+
+  .flex-me {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .col {
+    flex-direction: column;
+  }
+
+  .full-width {
+    width: 100%;
+  }
+
+  .flex-start {
+    align-items: flex-start;
+  }
+
+  .show-trip-options-action-sheet {
+    color:pink;
+  }
+
+  .vertical-card {
+    margin: 5px;
+    min-height: 280px;
+    text-align: center;
+  }
+
+  .linkified-url {
+    color: var(--ion-color-primary);
+    text-decoration: underline;
+  }

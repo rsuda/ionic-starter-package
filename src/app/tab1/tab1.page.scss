@@ -1,0 +1,43 @@
+ion-col {
+    padding: 0px;
+  }
+
+  ion-row {
+    margin: 5px;
+  }
+
+  ion-card {
+    margin: 5px;
+    padding: 0px !important;
+    background-color: #F8F9FA;
+    border-radius: 0px;
+    height: 300px;
+}
+ion-content {
+    --background: var(--canvas-background);
+  }
+
+ion-button{
+    width: 100%;
+    margin: 5px;
+}
+
+  /**
+Cards effected by this: Goodmorning, Feedback, Reference Library, and FAQ
+Hides cards if screen width is less than 767px or screen classified as Small/X-Small
+*/
+@media only screen and (max-width: 767px) {
+    #fadeshow1 {
+        display: none;
+    }
+}
+
+/**
+Cards effected by this: Watched Jobs, and Etrainer
+Hides cards if screen width is less than 991px or screen classified as Medium/Small/X-Small
+*/
+@media only screen and (max-width: 991px) {
+    #fadeshow2 {
+        display: none;
+    }
+}

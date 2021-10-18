@@ -1,3 +1,34 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-header>
+    <ion-item lines="full">
+      <ion-buttons>
+        <ion-menu-button (click)="menuButtonTapped()" slot="start" autoHide="false"></ion-menu-button>
+      </ion-buttons>
+      <img src="assets/Drive_Werner_Logo@3x.png" />
+    </ion-item>
+  </ion-header>
+  <ion-content>
+    <ion-menu contentId="main-content" type="overlay">
+      <ion-content style="width: 320px;">
+        <ion-list id="inbox-list ion-safe-area-top">
+          <div class="menu-header flex-me">
+            <ion-avatar>
+              <img style="height: 100%; width: 100%;;"alt="driver profile"  src="./assets/avatar.svg"/>
+            </ion-avatar>
+              <div class="flex-me col menu-header">
+                <ion-label class="edge-value user-name-label">Bryan</ion-label>
+                <ion-label class="werner-button text user-view-profile-label" (click)="routeToScreen('home/home/profile')">View Profile</ion-label>
+              </div>
+          </div>
+          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
+            <ion-item routerDirection="root" [routerLink]="[p.url]" lines="full" detail="false" routerLinkActive="selected">
+              <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+              <ion-label class="edge-value list-item-label">{{ p.title }}</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+</ion-content>
 </ion-app>
