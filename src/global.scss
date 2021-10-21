@@ -141,17 +141,20 @@ ion-badge{
   ion-segment{
     height: 50px;
     --background: white;
-    border: 1px solid #e8e8e8;
+    border-bottom: 1px solid #e8e8e8;
+    padding: 0px !important;
+    margin: 0px !important;
   }
 
   ion-segment-button {
-    --border-color: #e8e8e8 !important;
+    --border-color: var(--label-text) !important;
+    --border-width: 1px !important;
     text-transform: uppercase;
-    --color:#2d2e87 !important;
-    --indicator-color: #3369B4 !important;
-    --indicator-background: white !important;
-    --color-checked: white;
-    --color-hover: #2d2e87 !important;
+    --color: var(--label-text) !important;
+    --indicator-color: var(--gold-text) !important;
+    --indicator-background: var(--label-text) !important;
+    --color-checked: var(--primary);
+      margin: 0px;
   }
 
   ion-spinner {

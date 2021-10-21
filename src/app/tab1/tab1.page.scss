@@ -22,6 +22,11 @@ ion-button{
     margin: 5px;
 }
 
+img {
+    max-height: 30px;
+    margin: auto;
+  }
+
   /**
 Cards effected by this: Goodmorning, Feedback, Reference Library, and FAQ
 Hides cards if screen width is less than 767px or screen classified as Small/X-Small
