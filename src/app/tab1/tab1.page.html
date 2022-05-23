@@ -1,92 +1,84 @@
 <ion-header>
-  <ion-item lines="full">
-    <ion-buttons>
-      <ion-menu-button slot="start" autoHide="false"></ion-menu-button>
-    </ion-buttons>
-    <img src="assets/Drive_Werner_Logo@3x.png" />
-  </ion-item>
+  <ion-toolbar mode="ios">
+      <ion-buttons slot="start">
+        <ion-avatar style="width: 28px; height: 28px;">
+          <img src="../../assets/icons/person.png">
+        </ion-avatar>
+      </ion-buttons>
+      <ion-title><img style="vertical-align: middle;" src="../../assets/icons/logo.png"></ion-title>
+  </ion-toolbar>
 </ion-header>
-<ion-content class="test">
-  <ion-grid>
-    <ion-row>
-      <ion-col size-xl="6" size-lg="6" size-md="6" size-sm="12" size-xs="12">
-        <ion-card>
-          <ion-card-title>
-            Map it works!!
-          </ion-card-title>
-        </ion-card>
-      </ion-col>
-      <ion-col id="fadeshow1" size-xl="3" size-lg="3" size-md="3">
-        <ion-card>
-          <ion-card-title>
-            Good morning,
-          </ion-card-title>
-        </ion-card>
-      </ion-col>
-      <ion-col size-xl="3" size-lg="3" size-md="3" size-sm="6" size-xs="6">
-        <ion-card>
-          <ion-card-title>
-            Upcoming pay
-          </ion-card-title>
-        </ion-card>
-      </ion-col>
 
-      <!--******************************************************************************************************-->
-      <!--****************************--------------FEEDBACK AND SAFETY--------------***************************-->
-      <!--******************************************************************************************************-->
-
-      <ion-col id="fadeshow1" size-xl="3" size-lg="3" size-md="3" push-md="6" push-lg="0">
-        <ion-card>
-          <ion-card-title>
-            Feedback
-          </ion-card-title>
-        </ion-card>
-      </ion-col>
-      <ion-col size-xl="3" size-lg="3" size-md="3" size-sm="6" size-xs="6" push-md="6" push-lg="0">
-        <ion-card>
-          <ion-card-title>
-            Safety
-          </ion-card-title>
-        </ion-card>
-      </ion-col>
-
-      <!--******************************************************************************************************-->
-      <!--****************************--------------REFERENCE LIBRARY CARD--------------************************-->
-      <!--******************************************************************************************************-->
-
-      <ion-col id="fadeshow1" size-xl="3" size-lg="3" size-md="6" pull-md="6" pull-lg="0">
-        <ion-card>
-          <ion-card-title>
-            References Library
-          </ion-card-title>
-        </ion-card>
-      </ion-col>
-
-      <!--******************************************************************************************************-->
-
-      <ion-col id="fadeshow2" size-xl="3" size-lg="3" size-md="3">
-        <ion-card>
-          <ion-card-title>
-            Watched Jobs
-          </ion-card-title>
-        </ion-card>
-      </ion-col>
-      <ion-col id="fadeshow2" size-xl="3" size-lg="3" size-md="3">
-        <ion-card>
-          <ion-card-title>
-            eTrainer
-          </ion-card-title>
-        </ion-card>
-      </ion-col>
-      <ion-col id="fadeshow1" size-xl="3" size-lg="3" size-md="3" push-md="6" push-lg="0">
-        <ion-card>
-          <ion-card-title>
-            FAQ
-          </ion-card-title>
-        </ion-card>
-      </ion-col>
-
-      <!--******************************************************************************************************-->
-    </ion-row>
-  </ion-grid>
+<ion-content>
+  <div style="margin: auto; max-width: 1140px;">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title style="font-size: 18px;">
+          Current Job
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list lines="none">
+          <ion-item>
+            <ion-label>
+              <div style="color: #7d7d7d">
+                Next Location
+              </div>
+              <div style="font-size: 16px; font-weight: 500;">
+                Family Dollar DC 955 Marianne, FL
+              </div>
+            </ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>
+              <div style="color: #7d7d7d">
+                Scheduled Arrival
+              </div>
+              <div>
+                Sep 29, 16:30
+              </div>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+    <ion-list>
+      <ion-item lines="none">
+        <ion-label>
+          Past Jobs
+        </ion-label>
+          <ion-select style="color: black;" interface="popover" placeholder="Filter">
+            <ion-select-option value="brown">Brown</ion-select-option>
+            <ion-select-option value="blonde">Blonde</ion-select-option>
+            <ion-select-option value="black">Black</ion-select-option>
+            <ion-select-option value="red">Red</ion-select-option>
+          </ion-select>
+      </ion-item>
+      <ion-item *ngFor="let item of pastjobs">
+        <ion-label>
+          <div style="font-size: 18px">
+            {{item.title}}
+          </div>
+          <div style="font-size: 16px; color: #7d7d7d;">
+            {{item.date}} - {{item.id}}
+          </div>
+        </ion-label>
+        <ion-chip color="warning" *ngIf="item.chip == 'Submitted'">
+          <ion-label>
+            {{item.chip}}
+          </ion-label>
+        </ion-chip>
+        <ion-chip color="success" *ngIf="item.chip == 'Paid'">
+          <ion-label>
+            {{item.chip}}
+          </ion-label>
+        </ion-chip>
+        <ion-chip color="danger" *ngIf="item.chip == 'Missing'">
+          <ion-label>
+            {{item.chip}}
+          </ion-label>
+        </ion-chip>
+      </ion-item>
+    </ion-list>
+  </div>
 </ion-content>

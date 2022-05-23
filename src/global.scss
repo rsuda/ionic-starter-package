@@ -25,6 +25,11 @@
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 
+@font-face {
+  font-family: Avenir;
+  src: url("assets/font/Avenir\ LT\ 55\ Roman\ Regular.ttf") format("opentype");
+}
+
 ion-badge{
     float: right !important;
     font-weight: 900 !important;
@@ -43,40 +48,13 @@ ion-badge{
   }
 
   ion-card{
-    padding: 12px;
-    ion-card-header{
-      font-weight: medium;
-      text-transform: capitalize;
-      ion-card-title{
-        font-size: 16px;
-      }
-    }
-    ion-card-content{
-      text-transform: none;
-      font-size: 14px;
-      padding: 0px !important;
-    }
+    box-shadow: none;
+    border: 1px solid #e0e0e0;
   }
 
   ion-checkbox{
     --border-style: solid;
     --border-radius: 5px !important;
-  }
-
-  ion-chip {
-    &.popular{
-      background-color: var(--primary-dark);
-    }
-
-    &.recent{
-      background-color: var(--secondary);
-    }
-
-    color: white;
-    font-weight: 500;
-    font-size: 18px;
-    margin: 14px auto;
-    min-width: 80px;
   }
 
   ion-datetime {
