@@ -14,7 +14,7 @@
     <ion-card>
       <ion-card-header>
         <ion-card-title style="font-size: 18px;">
-          Current Job
+          Current Job<ion-icon style="align-items: center; vertical-align: middle;" name="chevron-forward-outline"></ion-icon>
         </ion-card-title>
       </ion-card-header>
       <ion-card-content>
@@ -24,7 +24,7 @@
               <div style="color: #7d7d7d">
                 Next Location
               </div>
-              <div style="font-size: 16px; font-weight: 500;">
+              <div style="font-size: 16px; font-weight: 600;">
                 Family Dollar DC 955 Marianne, FL
               </div>
             </ion-label>
@@ -34,7 +34,7 @@
               <div style="color: #7d7d7d">
                 Scheduled Arrival
               </div>
-              <div>
+              <div style="font-size: 16px; font-weight: 600;">
                 Sep 29, 16:30
               </div>
             </ion-label>
@@ -42,6 +42,16 @@
         </ion-list>
       </ion-card-content>
     </ion-card>
+    <ion-row>
+      <ion-col size="3" *ngFor="let item of cards" style="text-align: center;">
+        <div>
+          <img style="height: 32px; width: 32px;" [src]="item.image">
+        </div>
+        <div style="font-size: 16px; font-weight: 600">
+          {{item.title}}
+        </div>
+      </ion-col>
+    </ion-row>
     <ion-list>
       <ion-item lines="none">
         <ion-label>
@@ -56,7 +66,7 @@
       </ion-item>
       <ion-item *ngFor="let item of pastjobs">
         <ion-label>
-          <div style="font-size: 18px">
+          <div style="font-size: 16px; font-weight: 600;">
             {{item.title}}
           </div>
           <div style="font-size: 16px; color: #7d7d7d;">
