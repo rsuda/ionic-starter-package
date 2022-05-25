@@ -40,7 +40,7 @@
           </ion-list>
         </ion-card-content>
       </ion-card>
-      <ion-row>
+      <ion-row hidden>
         <ion-col size="3" *ngFor="let item of cards" style="text-align: center;">
           <div>
             <img style="height: 32px; width: 32px;" [src]="item.image">
@@ -51,7 +51,7 @@
         </ion-col>
       </ion-row>
       <ion-list>
-        <ion-segment style="text-align: left; align-items: left; width: 250px;" mode="ios" value="previous">
+        <ion-segment style="text-align: left; align-items: left; width: 250px; margin-left: 12px !important;" mode="ios" value="previous">
           <ion-segment-button value="previous">
             Previous
           </ion-segment-button>
