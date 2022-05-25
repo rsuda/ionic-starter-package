@@ -3,15 +3,15 @@
     <ion-menu contentId="main-content" type="overlay">
       <ion-content style="width: 320px;">
         <ion-list id="inbox-list ion-safe-area-top">
-          <div class="menu-header flex-me">
-            <ion-avatar>
-              <img style="height: 100%; width: 100%;;"alt="driver profile"  src="./assets/avatar.svg"/>
+          <ion-item lines="none">
+            <ion-avatar slot="start">
+              <img style="height: 100%; width: 100%;" alt="driver profile" src="./assets/icons/person.png"/>
             </ion-avatar>
-              <div class="flex-me col menu-header">
-                <ion-label class="edge-value user-name-label">Bryan</ion-label>
-                <ion-label class="werner-button text user-view-profile-label">View Profile</ion-label>
-              </div>
-          </div>
+            <ion-label>
+              <div>Bryan</div>
+              <div>View Profile</div>
+            </ion-label>
+          </ion-item>
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
             <ion-item routerDirection="root" [routerLink]="[p.url]" lines="full" detail="false" routerLinkActive="selected">
               <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>

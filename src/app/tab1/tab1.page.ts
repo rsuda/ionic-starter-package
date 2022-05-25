@@ -25,7 +25,16 @@ const PAST_JOBS_DATA: pastjobs[] = [
   {title: "Stop 2 to Destination", date: "3/28", id: "T9637111HL", chip: "Missing"},
   {title: "Stop 1 to Stop 2", date: "3/27", id: "T9637111HL", chip: "Paid"},
   {title: "Stop 3 to Destination", date: "3/27", id: "T9637111HL", chip: "Paid"},
-  {title: "Stop 2 to Stop 3", date: "3/27", id: "T9637111HL", chip: "Paid"}
+  {title: "Stop 2 to Stop 3", date: "3/27", id: "T9637111HL", chip: "Paid"},
+  {title: "Stop 1 to Stop 2", date: "3/27", id: "T9637111HL", chip: "Paid"},
+  {title: "Stop 3 to Destination", date: "3/27", id: "T9637111HL", chip: "Paid"},
+  {title: "Stop 2 to Stop 3", date: "3/27", id: "T9637111HL", chip: "Paid"},
+  {title: "Stop 1 to Stop 2", date: "3/27", id: "T9637111HL", chip: "Paid"},
+  {title: "Stop 3 to Destination", date: "3/27", id: "T9637111HL", chip: "Paid"},
+  {title: "Stop 2 to Stop 3", date: "3/27", id: "T9637111HL", chip: "Paid"},
+  {title: "Stop 1 to Stop 2", date: "3/27", id: "T9637111HL", chip: "Paid"},
+  {title: "Stop 3 to Destination", date: "3/27", id: "T9637111HL", chip: "Paid"},
+  {title: "Stop 2 to Stop 3", date: "3/27", id: "T9637111HL", chip: "Paid"},
 ]
 
 @Component({

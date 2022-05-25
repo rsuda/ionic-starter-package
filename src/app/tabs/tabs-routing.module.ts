@@ -28,6 +28,10 @@ const routes: Routes = [
         loadChildren: () => import('../more/more.module').then(m => m.MorePageModule)
       },
       {
+        path: 'home-v1',
+        loadChildren: () => import('../home-v1/home-v1.module').then(m => m.HomeV1PageModule)
+      },
+      {
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full'
