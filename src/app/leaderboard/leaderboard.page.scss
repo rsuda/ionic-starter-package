@@ -1,0 +1,37 @@
+ion-segment-button{
+    --indicator-color: #FFC409;
+    max-width: 137px;
+}
+
+.rank{
+    color: #828282;
+    font-size: 15px;
+}
+
+.name{
+    font-weight: 400;
+    color: 000000px;
+}
+
+.points{
+    font-weight: 500;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+}
+
+.icon{
+    height: 23px;
+    width: 23px;
+    padding-right: 6px;
+}
+
+ion-list{
+    max-width: 1140px;
+    margin: auto;
+}
+
+ion-segment{
+    box-shadow: 0 4px 6px -6px #222;
+    margin-bottom: 12px !important;
+  }

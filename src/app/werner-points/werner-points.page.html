@@ -1,0 +1,143 @@
+<ion-header  mode="md">
+  <ion-toolbar mode="md">
+      <ion-buttons slot="start">
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+      </ion-buttons>
+      <ion-title><img src="../../../../assets/Drive_Werner_Logo.png"></ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+<ion-toolbar mode="md">
+  <ion-buttons slot="start">
+    <ion-back-button defaultHref="/" text="" mode="ios"></ion-back-button>
+  </ion-buttons>
+  <ion-title>Werner Points</ion-title>
+</ion-toolbar>
+<ion-segment id="sg<NameOfTheSegment>" style="justify-content: start; width: 100% !important;" mode="md" value="in-progress" (ionChange)="segmentChanged($event)">
+  <ion-segment-button id="sgb<NameOfTheSegmentButton>" value="in-progress">
+    <ion-label id="lbl<NameOfTheLabel>">In Progress</ion-label>
+  </ion-segment-button>
+  <ion-segment-button id="sgb<NameOfTheSegmentButton>" value="completed">
+    <ion-label id="lbl<NameOfTheLabel>">Completed</ion-label>
+  </ion-segment-button>
+  <ion-segment-button id="sgb<NameOfTheSegmentButton>" value="redeem">
+    <ion-label id="lbl<NameOfTheLabel>">Redeem</ion-label>
+  </ion-segment-button>
+</ion-segment>
+<div *ngIf="selectedSegment=='completed'" class="animate__animated animate__slideInUp animate__fast">
+  <ion-list lines="full">
+    <ion-item>
+      <ion-label href="" color="primary" style="text-align: center;"><ion-icon src="../../../../assets/missions/crown.svg" style="padding-right: 6px;"></ion-icon><a href="/leaderboard" style="text-decoration: none;">View Leaderboard</a></ion-label>
+    </ion-item>
+    <ion-item *ngFor="let item of mission">
+      <ion-avatar slot="start" style="height: 74px; width: 74px;" disabled>
+        <img [src]="item.image">
+      </ion-avatar>
+      <ion-label>
+        <h1 style="font-size: 18px">{{item.title}}</h1>
+        <div style="font-size: 15px; color: #636363">{{item.description}}</div>
+        <div class="points">
+          <ion-icon  src="../../../../assets/icons/werner-points.svg" class="icon"></ion-icon>
+          {{item.points}}
+        </div>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+</div>
+<div *ngIf="selectedSegment=='in-progress'" class="animate__animated animate__slideInUp animate__fast">
+  <ion-list lines="full">
+    <ion-item>
+      <ion-label href="" color="primary" style="text-align: center;"><ion-icon src="../../../../assets/missions/crown.svg" style="padding-right: 6px;"></ion-icon><a href="/leaderboard" style="text-decoration: none;">View Leaderboard</a></ion-label>
+    </ion-item>
+    <ion-item *ngFor="let item of progressmission">
+      <ion-avatar slot="start" style="height: 74px; width: 74px;">
+        <div style="color: rgba(0,0,0,0.5);">
+          <img [src]="item.image">
+        </div>
+      </ion-avatar>
+      <ion-label>
+        <h1 style="font-size: 18px">{{item.title}}</h1>
+        <div style="font-size: 15px; color: #636363">{{item.description}}</div>
+        <div class="points">
+          <ion-icon  src="../../../../assets/icons/werner-points.svg" class="icon"></ion-icon>
+          {{item.points}}
+        </div>
+        <div style="padding-top: 6px; max-width: 250px;">
+          <ion-progress-bar value="{{item.progress}}"></ion-progress-bar>
+        </div>
+        <div style="color: #636363; font-size: 15px; padding-top: 6px;">
+          {{item.progress}}% Complete
+        </div>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</div>
+
+<div *ngIf="selectedSegment=='redeem' && !redeem" class="animate__animated animate__slideInUp animate__fast">
+  <ion-grid style="max-width: 720px; margin: auto; padding: 100px 36px;">
+    <ion-row>
+      <ion-col style="text-align: center; color: #636363; font-size: 16px; font-weight: 500;">
+        Point Balance
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col style="text-align: center;">
+        <ion-item lines="none">
+          <ion-label style="text-align: center;">
+            <div class="points-redeem">
+              <ion-icon  src="../../../../assets/icons/werner-points.svg" class="icon-reedem" style="vertical-align: middle;"></ion-icon>
+              2,500
+            </div>
+          </ion-label>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col style="text-align: center; font-size: 15px; color: #636363">
+        1,000 Blue Coins = $100
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col style="text-align: center; padding-top: 12px;">
+        <ion-button color="secondary" id="btn<NameOfTheButton>" expand="block" (click)="redeemPoints()"><ion-icon name="exit-outline" slot="start"></ion-icon>Redeem Points</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>
+<div *ngIf="selectedSegment=='redeem' && redeem" class="animate__animated animate__slideInUp animate__fast">
+  <ion-grid style="max-width: 720px; margin: auto; padding: 100px 36px;">
+    <ion-row hidden>
+      <ion-col style="text-align: center; color: #636363; font-size: 16px; font-weight: 500;">
+        <img src="./assets/circle.svg">
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col style="text-align: center;">
+        <circle-progress
+          [percent]="80"
+          [radius]="100"
+          [outerStrokeWidth]="12"
+          [innerStrokeWidth]="8"
+          [outerStrokeColor]="'#2CC144'"
+          [innerStrokeColor]="'#D6F2DB'"
+          [animation]="true"
+          [animationDuration]="300"
+        ></circle-progress>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col style="text-align: center; font-size: 15px; color: #636363">
+        <ion-label>
+          <div style="font-weight: 500; color: black; font-size: 18px;">Great job, you're almost there!</div>
+          <div>You can redeem your points once you hit 1000.</div>
+        </ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col style="text-align: center; padding-top: 12px;">
+        <ion-button disabled color="secondary" id="btn<NameOfTheButton>" expand="block"><ion-icon name="exit-outline" slot="start"></ion-icon>Redeem Points</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>

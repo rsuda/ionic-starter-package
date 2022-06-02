@@ -8,7 +8,7 @@
 </ion-header>
 
 <ion-content style="background: #E9E9E9 !important;">
-  <ion-grid style="max-width: 1140px; margin: auto;">
+  <ion-grid style="max-width: 1140px; margin: auto;" class="animate__animated animate__slideInUp animate__fast">
     <ion-row>
       <ion-col
       size-xs="12"
@@ -58,7 +58,7 @@
         size-md="3"
         size-lg="3"
         size-xl="2">
-        <ion-card button>
+        <ion-card button routerLink="/werner-points">
           <ion-card-header>
             <ion-card-title>
               {{item.title}}
@@ -130,7 +130,7 @@
     </ion-row>
   </ion-grid>
   <ion-fab vertical="bottom" horizontal="end" slot="fixed" style="height: 74px; width: 74px;">
-    <ion-fab-button color="secondary" style="height: 74px; width: 74px;">
+    <ion-fab-button color="tertiary" style="height: 74px; width: 74px;">
       <ion-icon style="height: 55  px; width: 55px;" src="./assets/icons/fab.svg"></ion-icon>
     </ion-fab-button>
   </ion-fab>

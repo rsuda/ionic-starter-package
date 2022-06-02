@@ -1,0 +1,74 @@
+ion-segment-button{
+    --indicator-color: #FFC409;
+    max-width: 137px;
+}
+
+.circle {
+    width: 500px;
+    height: 500px;
+    line-height: 500px;
+    border-radius: 50%;
+    font-size: 50px;
+    border: 10px solid #1B6A1B;
+    color: black;
+    text-align: center;
+    background: white;
+  }
+
+  .my-custom-class {
+    --background: #222;
+    --spinner-color: #fff;
+
+    color: #fff;
+  }
+
+  ion-segment{
+    box-shadow: 0 4px 6px -6px #222;
+    margin-bottom: 12px !important;
+  }
+
+.icon{
+    height: 23px;
+    width: 23px;
+    padding-right: 6px;
+}
+
+.icon-redeem{
+    height: 36px;
+    width: 36px;
+    padding-right: 6px;
+}
+
+.points{
+    font-weight: 500;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+}
+
+ion-row{
+    padding: 0px;
+}
+
+ion-col{
+    padding: 0px;
+}
+
+.points-redeem{
+    font-weight: 500;
+    vertical-align: middle;
+    align-items: center;
+    font-size: 36px;
+}
+
+ion-list{
+    max-width: 1140px;
+    margin: auto;
+}
+
+
+
+ion-progress-bar{
+    --progress-background: #206fe4;
+    --background: #e2e2e2;
+}

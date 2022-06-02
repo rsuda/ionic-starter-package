@@ -13,7 +13,15 @@ const routes: Routes = [
   {
     path: 'home-v1',
     loadChildren: () => import('./home-v1/home-v1.module').then( m => m.HomeV1PageModule)
-  }
+  },
+  {
+    path: 'werner-points',
+    loadChildren: () => import('./werner-points/werner-points.module').then( m => m.WernerPointsPageModule)
+  },
+  {
+    path: 'leaderboard',
+    loadChildren: () => import('./leaderboard/leaderboard.module').then( m => m.LeaderboardPageModule)
+  },
 ];
 @NgModule({
   imports: [
