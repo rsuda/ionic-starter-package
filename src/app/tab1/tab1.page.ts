@@ -37,6 +37,8 @@ const PAST_JOBS_DATA: pastjobs[] = [
   {title: "Stop 2 to Stop 3", date: "3/27", id: "T9637111HL", chip: "Paid"},
 ]
 
+const delay = ms => new Promise(res => setTimeout(res, ms));
+
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
@@ -46,6 +48,20 @@ export class Tab1Page {
 
   pastjobs = PAST_JOBS_DATA;
   cards = CARDS_DATA;
-  constructor() {}
 
+  public data: boolean = false;
+
+  function = async () => {
+    await delay(2000);
+    this.data = true;
+    console.log("32");
+  };
+
+  constructor() {
+
+  }
+
+  ngOnInit(){
+    this.function();
+  }
 }
