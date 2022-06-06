@@ -24,7 +24,7 @@
               <div style="color: #7d7d7d">
                 Next Location
               </div>
-              <div style="font-size: 16px; font-weight: 600;">
+              <div style="font-size: 16px; font-weight: 500;">
                 Family Dollar DC 955 Marianne, FL
               </div>
             </ion-label>
@@ -34,7 +34,7 @@
               <div style="color: #7d7d7d">
                 Scheduled Arrival
               </div>
-              <div style="font-size: 16px; font-weight: 600;">
+              <div style="font-size: 16px; font-weight: 500;">
                 Sep 29, 16:30
               </div>
             </ion-label>
@@ -48,7 +48,7 @@
           <div>
             <img style="height: 32px; width: 32px;" [src]="item.image">
           </div>
-          <div style="font-size: 16px; font-weight: 600">
+          <div style="font-size: 16px; font-weight: 500">
             {{item.title}}
           </div>
         </ion-card>
@@ -56,7 +56,7 @@
     </ion-row>
     <ion-list>
       <ion-item lines="none">
-        <ion-label style="font-size: 18px; font-weight: 600;">
+        <ion-label style="font-size: 18px; font-weight: 500;">
           Past Jobs
         </ion-label>
           <ion-select style="color: black;" interface="popover" placeholder="Filter">
@@ -67,9 +67,9 @@
           </ion-select>
       </ion-item>
       <div *ngIf="data">
-        <ion-item *ngFor="let item of pastjobs" button>
+        <ion-item *ngFor="let item of pastjobs" button href="/trip-details">
           <ion-label>
-            <div style="font-size: 16px; font-weight: 600;">
+            <div style="font-size: 16px; font-weight: 500;">
               {{item.title}}
             </div>
             <div style="font-size: 16px; color: #7d7d7d;">
@@ -105,7 +105,7 @@
           </ion-label>
         </ion-item>
       </div>
-      
+
     </ion-list>
   </div>
 </ion-content>

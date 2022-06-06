@@ -1,0 +1,18 @@
+ion-segment{
+    border-radius: 100px;
+    --background: none;
+    border: none;
+    height: 30px;
+}
+
+ion-segment-button{
+    text-transform: capitalize !important;
+    --indicator-color: #F3F3F3 !important;
+    --color-checked: #000000 !important;
+    --border-radius: 100px !important;
+    --indicator-height: 30px !important;
+}
+
+ion-input{
+    width: 100%;
+}

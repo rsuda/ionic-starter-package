@@ -51,7 +51,7 @@
         </ion-col>
       </ion-row>
       <ion-list>
-        <ion-segment style="text-align: left; align-items: left; width: 250px; margin-left: 12px !important;" mode="ios" value="previous">
+        <ion-segment style="text-align: left; align-items: left; width: 250px; margin-left: 12px !important; margin-bottom: 12px !important;" mode="ios" value="previous">
           <ion-segment-button value="previous">
             Previous
           </ion-segment-button>
@@ -59,7 +59,7 @@
             Pre-Assigned
           </ion-segment-button>
         </ion-segment>
-        <ion-item *ngFor="let item of pastjobs">
+        <ion-item *ngFor="let item of pastjobs" button routerLink="/trip-detail">
           <ion-label>
             <div style="font-size: 16px; font-weight: 600;">
               {{item.title}}

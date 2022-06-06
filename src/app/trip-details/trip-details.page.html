@@ -1,0 +1,151 @@
+<ion-header>
+  <ion-toolbar mode="md">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" text="" mode="ios"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Current Job</ion-title>
+    <ion-buttons slot="end">
+      <ion-button id="btn" slot="icon-only">
+        <ion-icon size="large" name="chatbox-outline"></ion-icon>
+        <ion-badge color="secondary" id="badge">3</ion-badge>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item lines="inset" style="max-width: 1140px; margin: auto;">
+    <ion-label>
+      <div style="color: #7a7a7a; font-size: 15px;">
+        Trip ID
+      </div>
+      <div style="color: black; font-size: 17px; font-weight: 500;">
+        T9379273HL
+      </div>
+    </ion-label>
+    <ion-label>
+      <div style="color: #7a7a7a; font-size: 15px;">
+        Shipper Order
+      </div>
+      <div style="color: black; font-size: 17px; font-weight: 500;">
+        8277732966
+      </div>
+    </ion-label>
+    <ion-button slot="end" color="light" fill="clear" (click)="presentActionSheet()">
+      <ion-icon slot="icon-only" name="ellipsis-horizontal-circle"></ion-icon>
+    </ion-button>
+  </ion-item>
+  <ion-grid style="max-width: 1140px;">
+    <ion-row>
+      <ion-col size="1" style="text-align: center;">
+        <img style="padding-top: 12px;" src="./assets/icons/past-job.svg">
+      </ion-col>
+      <ion-col>
+        <ion-list lines="none">
+          <ion-item>
+            <ion-label style="font-size: 17px; font-weight: 500;">
+              <div>
+                Werner Terminal
+              </div>
+              <div>
+                Laredo, TX
+              </div>
+            </ion-label>
+            <ion-button color="light" fill="clear" slot="end" (click)="presentActionSheet()">
+              <ion-icon slot="icon-only" name="ellipsis-horizontal-circle"></ion-icon>
+            </ion-button>
+          </ion-item>
+          <ion-item>
+            <ion-label>
+              <div style="font-size: 15px; color: #7a7a7a">
+                Actual Arrival
+              </div>
+              <div style="font-size: 17px; font-weight: 500;">
+                Fri, Dec 23, 09:06
+              </div>
+            </ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>
+              <div style="font-size: 15px; color: #7a7a7a">
+                Actual Departure
+              </div>
+              <div style="font-size: 17px; font-weight: 500;">
+                Fri, Dec 24 14:00
+              </div>
+            </ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>
+              <div style="font-size: 15px; color: #7a7a7a">
+               Trailer #
+              </div>
+              <div style="font-size: 17px; font-weight: 500;">
+                235903
+              </div>
+            </ion-label>
+            <ion-label>
+              <div style="font-size: 15px; color: #7a7a7a">
+               Pickup #
+              </div>
+              <div style="font-size: 17px; font-weight: 500;">
+                29830967
+              </div>
+            </ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label style="font-size: 17px; font-weight: 500;">
+              <div>
+                Eastern Distribution
+              </div>
+              <div>
+                Palmyra, PA
+              </div>
+            </ion-label>
+            <ion-button color="light" fill="clear" slot="end" (click)="presentActionSheet()">
+              <ion-icon slot="icon-only" name="ellipsis-horizontal-circle"></ion-icon>
+            </ion-button>
+          </ion-item>
+          <ion-item>
+            <ion-label>
+              <div style="font-size: 15px; color: #7a7a7a">
+                Actual Arrival
+              </div>
+              <div style="font-size: 17px; font-weight: 500;">
+                Fri, Dec 23, 09:06
+              </div>
+            </ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>
+              <div style="font-size: 15px; color: #7a7a7a">
+                Actual Departure
+              </div>
+              <div style="font-size: 17px; font-weight: 500;">
+                Fri, Dec 24 14:00
+              </div>
+            </ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>
+              <div style="font-size: 15px; color: #7a7a7a">
+               Trailer #
+              </div>
+              <div style="font-size: 17px; font-weight: 500;">
+                235903
+              </div>
+            </ion-label>
+            <ion-label>
+              <div style="font-size: 15px; color: #7a7a7a">
+               Pickup #
+              </div>
+              <div style="font-size: 17px; font-weight: 500;">
+                29830967
+              </div>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

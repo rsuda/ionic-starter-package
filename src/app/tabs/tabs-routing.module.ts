@@ -32,6 +32,10 @@ const routes: Routes = [
         loadChildren: () => import('../home-v1/home-v1.module').then(m => m.HomeV1PageModule)
       },
       {
+        path: 'trip-details',
+        loadChildren: () => import('../trip-details/trip-details.module').then(m => m.TripDetailsPageModule)
+      },
+      {
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full'

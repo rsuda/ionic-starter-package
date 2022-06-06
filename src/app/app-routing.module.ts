@@ -30,6 +30,18 @@ const routes: Routes = [
     path: 'modal',
     loadChildren: () => import('./modal/modal.module').then( m => m.ModalPageModule)
   },
+  {
+    path: 'trip-details',
+    loadChildren: () => import('./trip-details/trip-details.module').then( m => m.TripDetailsPageModule)
+  },
+  {
+    path: 'profile',
+    loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
+  },
+  {
+    path: 'achievements',
+    loadChildren: () => import('./achievements/achievements.module').then( m => m.AchievementsPageModule)
+  },
 ];
 @NgModule({
   imports: [

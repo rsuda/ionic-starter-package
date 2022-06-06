@@ -19,16 +19,16 @@
     <div style="text-align: left; font-size: 34px; font-weight: 500; padding: 12px;">
       Pay
     </div>
-    <ion-button color="primary" fill="clear">
+    <ion-button color="primary" fill="clear"  id="trigger-button" (click)="video()">
       <ion-icon slot="start" name="cash-outline"></ion-icon>
       Getting Paid
     </ion-button>
-    <ion-button color="primary" fill="clear">
+    <ion-button color="primary" fill="clear" id="trigger-button">
       <ion-icon slot="start" name="trending-up-outline"></ion-icon>
       Pay Increase
     </ion-button>
     <ion-list lines="full">
-      <ion-item detail button *ngFor="let item of pay" (click)="presentActionSheet()">
+      <ion-item detail button *ngFor="let item of pay" (click)="options()">
         <ion-label>
           <div style="color: #7F7F7F; font-size: 14px;">
             {{item.date}}
@@ -52,7 +52,7 @@
       <ion-icon slot="start" name="trending-up-outline"></ion-icon>
       Pay Increase
     </ion-button>
-    <ion-item *ngFor="let number of [0,1,2,3,4]">
+    <ion-item *ngFor="let number of [0,1,2,3,4,5,6]">
       <ion-label>
         <p>
           <ion-skeleton-text animated style="width: 30%"></ion-skeleton-text>
@@ -63,23 +63,5 @@
       </ion-label>
     </ion-item>
   </div>
-  <ion-modal [initialBreakpoint]="0.5" [breakpoints]="[0, 0.5, 1]">
-    <ng-template>
-      <ion-header>
-        <ion-toolbar color="primary">
-          <ion-title>
-            Inline
-          </ion-title>
-        </ion-toolbar>
-      </ion-header>
-      <ion-content>
-        <ion-item>
-          This is so cool!
-          <p>And a bit funny</p>
-        </ion-item>
-      </ion-content>
-    </ng-template>
-  </ion-modal>
 
-</ion-content>
 </ion-content>

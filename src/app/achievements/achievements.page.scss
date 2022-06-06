@@ -1,7 +1,42 @@
-ion-segment-button{
-    --indicator-color: #FFC409;
-    max-width: 137px;
+ion-title {
+    text-align: start;
+  }
+
+  ion-back-button{
+      color: black;
+  }
+
+  .sc-ion-buttons-md-s .button {
+    --background-hover: none;
 }
+
+ion-segment{
+    border-radius: 100px;
+    --background: none;
+    border: none;
+    height: 30px;
+}
+
+ion-segment-button{
+    text-transform: capitalize !important;
+    --indicator-color: #F3F3F3 !important;
+    --color-checked: #000000 !important;
+    --border-radius: 100px !important;
+    --indicator-height: 30px !important;
+    --border-width: 0px !important;
+}
+
+#btn {
+    position: relative;
+ }
+
+ #badge {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    font-size: 12px;
+    border-radius: 20px;
+ }
 
 .circle {
     width: 500px;
@@ -20,11 +55,6 @@ ion-segment-button{
     --spinner-color: #fff;
 
     color: #fff;
-  }
-
-  ion-segment{
-    box-shadow: 0 4px 6px -6px #222;
-    margin-bottom: 12px !important;
   }
 
   .sc-ion-buttons-md-s .button {

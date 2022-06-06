@@ -3,12 +3,15 @@ import { ActionSheetController } from '@ionic/angular';
 import { ModalController } from '@ionic/angular';
 import { ModalPage } from '../modal/modal.page';
 import { IonRouterOutlet } from '@ionic/angular';
+import { PayDetailsComponent } from '../pay-details/pay-details.component';
+import { VideoComponent } from '../video/video.component';
 
 
 export interface pay{
   date: string,
   amount: string
 }
+
 
 const PAY_DATA: pay[] = [
   {date: "December 9, 2021", amount: "$1,234.12"},
@@ -29,6 +32,7 @@ const PAY_DATA: pay[] = [
   {date: "August 4, 2021", amount: "$1,200.00"},
 ]
 
+
 const delay = ms => new Promise(res => setTimeout(res, ms));
 
 @Component({
@@ -38,6 +42,8 @@ const delay = ms => new Promise(res => setTimeout(res, ms));
 })
 export class Tab2Page {
 
+
+  isOpen: boolean = false;
   pay = PAY_DATA;
 
   modal: HTMLElement;
@@ -47,20 +53,41 @@ export class Tab2Page {
   function = async () => {
     await delay(2000);
     this.data = true;
-    console.log("32");
   };
 
-  constructor(public actionSheetController: ActionSheetController, 
-    public modalController: ModalController, 
+  constructor(public actionSheetController: ActionSheetController,
+    public modalController: ModalController,
     public routerOutlet: IonRouterOutlet,) {
 
-  }  
+  }
 
   async presentModal() {
     const modal = await this.modalController.create({
       component: ModalPage,
-      cssClass: 'custom-modal'
+      cssClass: 'my-custom-class'
     });
+    return await modal.present();
+  }
+
+  async options() {
+    const options = {
+      component: PayDetailsComponent,
+      cssClass: 'custom-modal',
+      swipeToClose: true,
+
+    };
+    const modal = await this.modalController.create(options);
+    await modal.present();
+  }
+
+  async video() {
+    const options = {
+      component: VideoComponent,
+      cssClass: 'video-modal',
+      swipeToClose: false,
+
+    };
+    const modal = await this.modalController.create(options);
     await modal.present();
   }
 
@@ -68,5 +95,5 @@ export class Tab2Page {
     this.function();
   }
 
-  
+
 }

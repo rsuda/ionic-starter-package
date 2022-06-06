@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { LoadingController } from '@ionic/angular';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 
@@ -40,13 +40,14 @@ const INPROGRESS: progressmission[] = [] = [
 ];
 
 @Component({
-  selector: 'app-werner-points',
-  templateUrl: './werner-points.page.html',
-  styleUrls: ['./werner-points.page.scss'],
+  selector: 'app-achievements',
+  templateUrl: './achievements.page.html',
+  styleUrls: ['./achievements.page.scss'],
 })
-export class WernerPointsPage implements OnInit {
+export class AchievementsPage implements OnInit {
 
-  constructor(public loadingController: LoadingController) {
+  constructor(public loadingController: LoadingController){
+
   }
 
   doughnutChart: any;

@@ -35,3 +35,7 @@ ion-segment{
     box-shadow: 0 4px 6px -6px #222;
     margin-bottom: 12px !important;
   }
+
+  .sc-ion-buttons-md-s .button {
+    --background-hover: none;
+}

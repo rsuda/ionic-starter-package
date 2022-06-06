@@ -10,13 +10,14 @@ export interface pastjobs {
 export interface cards {
   title: string;
   image: string;
+  url: string;
 }
 
 const CARDS_DATA: cards[] = [
-  {title: "Pay", image: "../../assets/icons/pay-color.svg"},
-  {title: "Job Search", image: "../../assets/icons/job-search.svg"},
-  {title: "Workday", image: "../../assets/icons/workday.png"},
-  {title: "Referrals", image: "../../assets/icons/referral.svg"}
+  {title: "Pay", image: "../../assets/icons/pay-color.svg", url: "tab2"},
+  {title: "Job Search", image: "../../assets/icons/job-search.svg", url: "job-search"},
+  {title: "Workday", image: "../../assets/icons/workday.png", url: "workday"},
+  {title: "Referrals", image: "../../assets/icons/referral.svg", url: "referral"}
 ]
 
 const PAST_JOBS_DATA: pastjobs[] = [

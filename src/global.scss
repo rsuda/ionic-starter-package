@@ -27,16 +27,6 @@
 @import "~animate.css/animate.min.css";
 
 
-
-ion-badge{
-    float: right !important;
-    font-weight: 900 !important;
-    margin-top:2px !important;
-    background-color: var(--primary-dark);
-    border-radius: 100%;
-    padding: 6px 9px;
-  }
-
   ion-button{
     --border-radius: 6px !important;
     --background: #3369B4;
@@ -44,6 +34,19 @@ ion-badge{
     text-transform: capitalize;
     --box-shadow: none;
   }
+
+  ion-modal.custom-modal {
+
+    position: absolute;
+    bottom: 0;
+    --border-radius: 20px 20px 0 0 !important;
+}
+
+ion-modal.video-modal {
+
+  position: absolute;
+  bottom: 0;
+}
 
   ion-card{
     box-shadow: none;
