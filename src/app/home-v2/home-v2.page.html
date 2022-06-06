@@ -1,0 +1,142 @@
+<ion-header>
+  <ion-toolbar mode="ios">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title><img style="vertical-align: middle;" src="../../assets/Drive_Werner_Logo.png"></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="background: #E9E9E9 !important;">
+  <ion-grid style="max-width: 1140px; margin: auto;" class="animate__animated animate__slideInUp animate__fast">
+    <ion-row>
+      <ion-col
+      size-xs="12"
+      size-sm="12"
+      size-md="8"
+      size-lg="8"
+      size-xl="8"
+      offset-md="2"
+      offset-lg="2"
+      offset-xl="2">
+        <ion-card button>
+          <ion-card-header>
+            <ion-card-title>
+              <ion-icon src="./assets/icons/truck.svg" style="vertical-align: middle;"></ion-icon>
+              Current Job
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <div style="text-align: center; max-height: 136px;">
+              <img src="./assets/icons/map-home-full.PNG">
+            </div>
+            <ion-item lines="none">
+              <ion-label slot="start">
+                <div style="color: #828282; font-size: 14px;">
+                  <ion-icon src="./assets/icons/nav.svg"></ion-icon>
+                  Next Location
+                </div>
+                <div style="color: #000000; font-size: 16px; font-weight: 600;">
+                  Truck Terminal, TX
+                </div>
+              </ion-label>
+              <ion-label slot="end">
+                <div style="color: #828282; font-size: 14px;">
+                  <ion-icon src="./assets/icons/clock.svg"></ion-icon>
+                  Scheduled Arrival
+                </div>
+                <div style="color: #000000; font-size: 16px; font-weight: 600;">
+                  Dec 13 at 08:00
+                </div>
+              </ion-label>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col *ngFor="let item of cards"
+        size-xs="6"
+        size-sm="4"
+        size-md="3"
+        size-lg="3"
+        size-xl="2">
+        <ion-card button routerLink="/werner-points">
+          <ion-card-header>
+            <ion-card-title>
+              {{item.title}}
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content style="text-align: center; padding-bottom: 12px;">
+            <img [src]="item.image">
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col
+        size-xs="6"
+        size-sm="4"
+        size-md="3"
+        size-lg="3"
+        size-xl="2">
+          <ion-card button>
+            <ion-card-header>
+              <ion-card-title>
+                Safety
+              </ion-card-title>
+            </ion-card-header>
+            <ion-card-content style="text-align: center;">
+              <img src="./assets/icons/safety-circle.svg">
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col
+        size-xs="6"
+        size-sm="4"
+        size-md="3"
+        size-lg="3"
+        size-xl="2">
+          <ion-card style="height: 48%;" button>
+            <ion-card-header>
+              <ion-card-title>
+                News
+              </ion-card-title>
+            </ion-card-header>
+            <ion-card-content style="text-align: center;">
+              <img src="./assets/icons/news.svg">
+            </ion-card-content>
+          </ion-card>
+          <ion-card style="height: 48%; margin-top: 10px;" button>
+            <ion-card-header>
+              <ion-card-title>
+                Urgent Care
+              </ion-card-title>
+            </ion-card-header>
+            <ion-card-content style="text-align: center;">
+              <img src="./assets/icons/urgent.svg">
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col
+      size-xs="12"
+      size-sm="8"
+      size-md="6"
+      size-lg="4"
+      size-xl="4">
+        <ion-card button>
+          <img style="width: 100%; height: 100%;" src="./assets/icons/banner.png" alt="">
+        </ion-card>
+      </ion-col>
+      </ion-row>
+      <ion-row>
+
+    </ion-row>
+  </ion-grid>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" style="height: 74px; width: 74px;">
+    <ion-fab-button color="tertiary" style="height: 74px; width: 74px;">
+      <ion-icon style="height: 55  px; width: 55px;" src="./assets/icons/fab.svg"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
+
