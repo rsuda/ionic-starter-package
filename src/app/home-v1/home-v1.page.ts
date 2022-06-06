@@ -18,8 +18,7 @@ const CARDS_DATA: cards[] = [
   {title: "Pay", image: "../../assets/icons/cash.svg"},
   {title: "Driving Opportunities", image: "../../assets/icons/briefcase.svg"},
   {title: "Messages", image: "../../assets/icons/contacts.svg"},
-  {title: "Workday", image: "../../assets/icons/workday.png"},
-  {title: "Werner Points", image: "../../assets/icons/werner-points.svg"}
+  {title: "Workday", image: "../../assets/icons/workday.png"}
   //{title: "Safety", image: "../../assets/icons/workday.png"},
   //{title: "News", image: "../../assets/icons/news.svg"},
   //{title: "Urgent Care", image: "../../assets/icons/urgent.svg"}
