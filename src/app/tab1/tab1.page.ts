@@ -21,21 +21,21 @@ const CARDS_DATA: cards[] = [
 ]
 
 const PAST_JOBS_DATA: pastjobs[] = [
-  {title: "Stop 2 to Destination", date: "3/29", id: "T9637111HL", chip: "Submitted"},
-  {title: "Stop 1 to Stop 2", date: "3/29", id: "T9637111HL", chip: "Missing"},
-  {title: "Stop 2 to Destination", date: "3/28", id: "T9637111HL", chip: "Missing"},
-  {title: "Stop 1 to Stop 2", date: "3/27", id: "T9637111HL", chip: "Paid"},
-  {title: "Stop 3 to Destination", date: "3/27", id: "T9637111HL", chip: "Paid"},
-  {title: "Stop 2 to Stop 3", date: "3/27", id: "T9637111HL", chip: "Paid"},
-  {title: "Stop 1 to Stop 2", date: "3/27", id: "T9637111HL", chip: "Paid"},
-  {title: "Stop 3 to Destination", date: "3/27", id: "T9637111HL", chip: "Paid"},
-  {title: "Stop 2 to Stop 3", date: "3/27", id: "T9637111HL", chip: "Paid"},
-  {title: "Stop 1 to Stop 2", date: "3/27", id: "T9637111HL", chip: "Paid"},
-  {title: "Stop 3 to Destination", date: "3/27", id: "T9637111HL", chip: "Paid"},
-  {title: "Stop 2 to Stop 3", date: "3/27", id: "T9637111HL", chip: "Paid"},
-  {title: "Stop 1 to Stop 2", date: "3/27", id: "T9637111HL", chip: "Paid"},
-  {title: "Stop 3 to Destination", date: "3/27", id: "T9637111HL", chip: "Paid"},
-  {title: "Stop 2 to Stop 3", date: "3/27", id: "T9637111HL", chip: "Paid"},
+  {title: "Romeoville, IL to Indianapolis, IN", date: "05/27", id: "T9637111HL", chip: "Submitted"},
+  {title: "Whitmore LK, to Woodridge, IL", date: "05/26", id: "T9637111HL", chip: "Missing"},
+  {title: "Joliet, IL to Belleville, MI", date: "05/25", id: "T9637111HL", chip: "Missing"},
+  {title: "Anderson, IN to Romeoville, IL", date: "05/25", id: "T9637111HL", chip: "Paid"},
+  {title: "Romeoville, IL to Merrillville, IN", date: "05/24", id: "T9637111HL", chip: "Paid"},
+  {title: "Neenah, WI to Sauk VLG, IL", date: "05/22", id: "T9637111HL", chip: "Paid"},
+  {title: "Romeoville, IL to GR Chute, WI", date: "05/22", id: "T9637111HL", chip: "Paid"},
+  {title: "Romeoville, IL to MT Pleasant, IA", date: "05/21", id: "T9637111HL", chip: "Paid"},
+  {title: "Romeoville, IL to Beloit, WI", date: "05/21", id: "T9637111HL", chip: "Paid"},
+  {title: "Neenah, WI to Romeoville, IL", date: "05/20", id: "T9637111HL", chip: "Paid"},
+  {title: "Indianapolis, IN to Anderson, IN", date: "05/18", id: "T9637111HL", chip: "Paid"},
+  {title: "Joliet, IL to Indianapolis, IN", date: "05/18", id: "T9637111HL", chip: "Paid"},
+  {title: "Neenah, WI to Romeoville, IL", date: "05/18", id: "T9637111HL", chip: "Paid"},
+  {title: "Romeoville, IL to GR Chute, WI", date: "05/17", id: "T9637111HL", chip: "Paid"},
+  {title: "Neenah, WI to Romeoville, IL", date: "05/15", id: "T9637111HL", chip: "Paid"},
 ]
 
 const delay = ms => new Promise(res => setTimeout(res, ms));

@@ -1,0 +1,23 @@
+ion-title {
+    text-align: start;
+  }
+
+  ion-back-button{
+      color: black;
+  }
+
+  .sc-ion-buttons-md-s .button {
+    --background-hover: none;
+}
+
+#btn {
+    position: relative;
+ }
+
+ #badge {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    font-size: 12px;
+    border-radius: 20px;
+ }

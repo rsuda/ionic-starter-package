@@ -2,7 +2,7 @@
   <ion-toolbar mode="ios">
       <ion-buttons slot="start">
         <ion-avatar style="width: 28px; height: 28px;">
-          <img src="../../assets/icons/person.png">
+          <a href="/profile"><img src="../../assets/icons/person.png"></a>
         </ion-avatar>
       </ion-buttons>
       <ion-title><img style="vertical-align: middle;" src="../../assets/icons/logo.png"></ion-title>
@@ -11,7 +11,7 @@
 
 <ion-content>
   <div style="margin: auto; max-width: 1140px;">
-    <ion-card button>
+    <ion-card button href="/current-job">
       <ion-card-header>
         <ion-card-title style="font-size: 18px;">
           Current Job<ion-icon style="align-items: center; vertical-align: middle;" name="chevron-forward-outline"></ion-icon>
@@ -25,7 +25,7 @@
                 Next Location
               </div>
               <div style="font-size: 16px; font-weight: 500;">
-                Family Dollar DC 955 Marianne, FL
+                Phoenix Closures Greencastle, IN
               </div>
             </ion-label>
           </ion-item>
@@ -35,7 +35,7 @@
                 Scheduled Arrival
               </div>
               <div style="font-size: 16px; font-weight: 500;">
-                Sep 29, 16:30
+                May 27, 15:00
               </div>
             </ion-label>
           </ion-item>
@@ -46,7 +46,7 @@
       <ion-col size="3" *ngFor="let item of cards" style="text-align: center;" button>
         <ion-card style="margin: 0px; border: none;" button>
           <div>
-            <img style="height: 32px; width: 32px;" [src]="item.image">
+            <a href="/tabs/tab2"><img style="height: 32px; width: 32px;" [src]="item.image"></a>
           </div>
           <div style="font-size: 16px; font-weight: 500">
             {{item.title}}
@@ -68,7 +68,7 @@
       </ion-item>
       <div *ngIf="data">
         <ion-item *ngFor="let item of pastjobs" button href="/trip-details">
-          <ion-label>
+          <ion-label text-wrap>
             <div style="font-size: 16px; font-weight: 500;">
               {{item.title}}
             </div>

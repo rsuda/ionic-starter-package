@@ -39,6 +39,7 @@ export class PayDetailsComponent implements OnInit {
 
   constructor(public modalController: ModalController) { }
 
+  public grosspay: boolean = false;
   detail = DETAIL_DATA;
   data = DATA_DATA;
 

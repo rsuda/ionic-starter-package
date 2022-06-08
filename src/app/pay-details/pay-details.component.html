@@ -6,7 +6,7 @@
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
-<ion-content>
+<ion-content *ngIf="!grosspay">
   <ion-list>
     <ion-item-divider style="height: 42px; text-transform: uppercase; background-color: #f2f2f2; color: #7f7f7f; font-weight: 400;">
       Statement of Earnings
@@ -20,7 +20,7 @@
       <ion-label style="padding-left: 36px;">Current</ion-label>
       <ion-label style="padding-left: 60px;">YTD</ion-label>
     </ion-item-divider>
-    <ion-item *ngFor="let data of data" detail button lines="full">
+    <ion-item *ngFor="let data of data" detail button lines="full" (click)="grosspay = true">
       <ion-label style="font-size: 15px; color: #7f7f7f;">{{data.title}}</ion-label>
       <ion-label style="font-size: 15px; font-weight: 500;">{{data.current}}</ion-label>
       <ion-label style="font-size: 15px; font-weight: 500;">{{data.ytd}}</ion-label>
@@ -28,5 +28,19 @@
     <ion-item-divider style="height: 42px; text-transform: uppercase; background-color: #f2f2f2; color: #7f7f7f; font-weight: 400;">
       Trip Detail
     </ion-item-divider>
+  </ion-list>
+</ion-content>
+<ion-content *ngIf="grosspay">
+  <ion-list>
+    <ion-item-divider style="height: 42px; text-transform: uppercase; background-color: #f2f2f2; color: #7f7f7f; font-weight: 400;">
+      <ion-label slot="start">Pay Detail</ion-label>
+      <ion-label style="padding-left: 36px;">Current</ion-label>
+      <ion-label style="padding-left: 60px;">YTD</ion-label>
+    </ion-item-divider>
+    <ion-item *ngFor="let data of data" lines="full">
+      <ion-label style="font-size: 15px; color: #7f7f7f;">{{data.title}}</ion-label>
+      <ion-label style="font-size: 15px; font-weight: 500;">{{data.current}}</ion-label>
+      <ion-label style="font-size: 15px; font-weight: 500;">{{data.ytd}}</ion-label>
+    </ion-item>
   </ion-list>
 </ion-content>

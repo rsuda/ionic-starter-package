@@ -1,0 +1,54 @@
+
+<ion-toolbar mode="md">
+  <ion-title>Driver Opportunities</ion-title>
+  <ion-buttons slot="start" style="color: black;">
+    <ion-back-button defaultHref="/"></ion-back-button>
+  </ion-buttons>
+</ion-toolbar>
+<ion-content>
+  <div style="margin: auto; max-width: 1140px;">
+    <ion-searchbar></ion-searchbar>
+    <ion-segment style="text-align: left; align-items: left; width: 250px; margin-left: 12px !important; margin-bottom: 12px !important; max-width: 1140px; margin: auto;" mode="ios" value="announcements" (ionChange)="segmentChanged($event)">
+      <ion-segment-button value="announcements">
+        Search
+      </ion-segment-button>
+      <ion-segment-button value="messages">
+        Requests
+      </ion-segment-button>
+    </ion-segment>
+    <ion-list *ngIf="selectedSegment == 'announcements' && data">
+      <ion-item *ngFor="let item of announcements" lines="full" button detail>
+        <ion-label>
+          <div style="text-overflow: ellipsis; overflow: hidden;">{{item.title}}</div>
+          <div>{{item.message}}</div>
+        </ion-label>
+        <ion-icon slot="end" name="timer-outline" color="success"></ion-icon>
+        <ion-icon slot="end" name="hourglass-outline" color="primary"></ion-icon>
+      </ion-item>
+    </ion-list>
+    <ion-list *ngIf="selectedSegment == 'announcements' && !data">
+      <ion-item *ngFor="let item of announcements" lines="full" button>
+        <ion-label text-wrap>
+          <ion-skeleton-text animated style="width: 100%"></ion-skeleton-text>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+    <ion-list *ngIf="selectedSegment == 'messages' && data">
+      <ion-item *ngFor="let message of messages" lines="full" button detail>
+        <ion-label slot="start" text-wrap>
+          <div>{{message.date}}</div>
+          <div>{{message.title}}</div>
+        </ion-label>
+        <ion-icon slot="end" name="hourglass-outline" color="primary"></ion-icon>
+      </ion-item>
+    </ion-list>
+    <ion-list *ngIf="selectedSegment == 'messages' && !data">
+      <ion-item *ngFor="let item of messages" lines="full" button>
+        <ion-label text-wrap>
+          <ion-skeleton-text animated style="width: 100%"></ion-skeleton-text>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
+

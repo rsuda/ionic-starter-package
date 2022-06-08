@@ -1,0 +1,59 @@
+
+<ion-toolbar mode="md">
+  <ion-title>Safety</ion-title>
+  <ion-buttons slot="start" style="color: black;">
+    <ion-back-button defaultHref="/"></ion-back-button>
+  </ion-buttons>
+</ion-toolbar>
+<ion-content>
+  <div style="margin: auto; max-width: 1140px;">
+    <ion-segment style="text-align: left; align-items: left; width: 250px; margin-left: 12px !important; margin-bottom: 12px !important; max-width: 1140px; margin: auto;" mode="ios" value="stats" (ionChange)="segmentChanged($event)">
+      <ion-segment-button value="stats">
+        Stats
+      </ion-segment-button>
+      <ion-segment-button value="inspections">
+        Inspections
+      </ion-segment-button>
+    </ion-segment>
+    <ion-grid style="padding-top: 24px;">
+      <ion-row>
+        <ion-col style="text-align: center;">
+          <circle-progress
+            [percent]="70"
+            [radius]="100"
+            [outerStrokeWidth]="12"
+            [innerStrokeWidth]="8"
+            [outerStrokeColor]="'#3369B4'"
+            [innerStrokeColor]="'#E2E2E2'"
+            [animation]="true"
+            [animationDuration]="300"
+          ></circle-progress>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col style="text-align: center;">
+          <div style="font-size: 16px; font-weight: 500;">
+            798,230
+          </div>
+          <div style="font-size: 16px; font-weight: 500; color: #7d7d7d">
+            Miles to Next Goal
+          </div>
+        </ion-col>
+        <ion-col style="text-align: center;">
+          <div style="font-size: 16px; font-weight: 500;">
+            2,000,000
+          </div>
+          <div style="font-size: 16px; font-weight: 500; color: #7d7d7d">
+            Next Milestone
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col style="text-align: center;">
+          <ion-chip>Safe Miles are updated on the 11th of each month.</ion-chip>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>
+

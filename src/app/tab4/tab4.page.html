@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar mode="ios">
+      <ion-buttons slot="start">
+        <ion-avatar style="width: 28px; height: 28px;">
+          <a href="/profile"><img src="../../assets/icons/person.png"></a>
+        </ion-avatar>
+      </ion-buttons>
+      <ion-title><img style="vertical-align: middle;" src="../../assets/icons/logo.png"></ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div style="margin: auto; max-width: 1140px;">
+    <div style="text-align: left; font-size: 34px; font-weight: 500; padding: 12px;">
+      Contacts
+    </div>
+    <ion-segment style="text-align: left; align-items: left; width: 250px; margin-left: 12px !important; margin-bottom: 12px !important; max-width: 1140px; margin: auto;" mode="ios" value="departments" (ionChange)="segmentChanged($event)">
+      <ion-segment-button value="departments">
+        Departments
+      </ion-segment-button>
+      <ion-segment-button value="terminals">
+        Terminals
+      </ion-segment-button>
+    </ion-segment>
+    <ion-list *ngIf="selectedSegment == 'departments' && data">
+      <ion-item *ngFor="let item of contacts" lines="full" button>
+        <ion-label slot="start" text-wrap>
+          <div>{{item.title}}</div>
+        </ion-label>
+        <ion-label slot="end">
+          <div>{{item.phone}}</div>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+    <ion-list *ngIf="selectedSegment == 'departments' && !data">
+      <ion-item *ngFor="let item of contacts" lines="full" button>
+        <ion-label text-wrap>
+          <ion-skeleton-text animated style="width: 100%"></ion-skeleton-text>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+    <ion-list *ngIf="selectedSegment == 'terminals' && data">
+      <ion-item *ngFor="let terminal of terminals" lines="full" button>
+        <ion-label slot="start" text-wrap>
+          <div>{{terminal.title}}</div>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+    <ion-list *ngIf="selectedSegment == 'terminals' && !data">
+      <ion-item *ngFor="let item of terminals" lines="full" button>
+        <ion-label text-wrap>
+          <ion-skeleton-text animated style="width: 100%"></ion-skeleton-text>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
+

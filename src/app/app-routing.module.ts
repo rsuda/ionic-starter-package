@@ -46,6 +46,38 @@ const routes: Routes = [
     path: 'home-v2',
     loadChildren: () => import('./home-v2/home-v2.module').then( m => m.HomeV2PageModule)
   },
+  {
+    path: 'current-job',
+    loadChildren: () => import('./current-job/current-job.module').then( m => m.CurrentJobPageModule)
+  },
+  {
+    path: 'past-job',
+    loadChildren: () => import('./past-job/past-job.module').then( m => m.PastJobPageModule)
+  },
+  {
+    path: 'employee-resources',
+    loadChildren: () => import('./employee-resources/employee-resources.module').then( m => m.EmployeeResourcesPageModule)
+  },
+  {
+    path: 'referral',
+    loadChildren: () => import('./referral/referral.module').then( m => m.ReferralPageModule)
+  },
+  {
+    path: 'messages',
+    loadChildren: () => import('./messages/messages.module').then( m => m.MessagesPageModule)
+  },
+  {
+    path: 'safety',
+    loadChildren: () => import('./safety/safety.module').then( m => m.SafetyPageModule)
+  },
+  {
+    path: 'driver-opportunities',
+    loadChildren: () => import('./driver-opportunities/driver-opportunities.module').then( m => m.DriverOpportunitiesPageModule)
+  },
+  {
+    path: 'news',
+    loadChildren: () => import('./news/news.module').then( m => m.NewsPageModule)
+  },
 ];
 @NgModule({
   imports: [

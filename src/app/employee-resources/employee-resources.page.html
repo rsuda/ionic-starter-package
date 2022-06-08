@@ -1,0 +1,25 @@
+<ion-toolbar mode="md">
+  <ion-title>Employee Resources</ion-title>
+  <ion-buttons slot="start" style="color: black;">
+    <ion-back-button defaultHref="/"></ion-back-button>
+  </ion-buttons>
+</ion-toolbar>
+<ion-content>
+  <div style="margin: auto; max-width: 1140px;">
+    <ion-list *ngIf="data">
+      <ion-item *ngFor="let item of resources" lines="full" button>
+        <ion-label text-wrap>
+          <div>{{item.title}}</div>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+    <ion-list *ngIf="!data">
+      <ion-item *ngFor="let item of resources" lines="full" button>
+        <ion-label text-wrap>
+          <ion-skeleton-text animated style="width: 100%"></ion-skeleton-text>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
+
