@@ -11,7 +11,7 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/werner-points" text="" mode="ios"></ion-back-button>
     </ion-buttons>
-    <ion-title>Werner Points</ion-title>
+    <ion-title>Blue Coins</ion-title>
   </ion-toolbar>
   <ion-segment id="sg<NameOfTheSegment>" style="justify-content: start; width: 100% !important;" mode="md" value="in-progress" (ionChange)="segmentChanged($event)">
     <ion-segment-button id="sgb<NameOfTheSegmentButton>" value="in-progress">
@@ -24,9 +24,9 @@
       <ion-label id="lbl<NameOfTheLabel>">Redeem</ion-label>
     </ion-segment-button>
   </ion-segment>
-  <div *ngIf="selectedSegment=='completed' && !data" class="animate__animated animate__slideInUp animate__fast">
+  <div *ngIf="selectedSegment=='completed' && !data">
     <ion-list lines="full">
-      <ion-item>
+      <ion-item hidden>
         <ion-label href="" color="primary" style="text-align: center;"><ion-icon src="../../../../assets/missions/crown.svg" style="padding-right: 6px;"></ion-icon><a href="/leaderboard" style="text-decoration: none;">View Leaderboard</a></ion-label>
       </ion-item>
       <ion-item *ngFor="let item of mission">
@@ -45,9 +45,9 @@
     </ion-list>
 
   </div>
-  <div *ngIf="selectedSegment=='in-progress'" class="animate__animated animate__slideInUp animate__fast">
+  <div *ngIf="selectedSegment=='in-progress'">
     <ion-list lines="full">
-      <ion-item>
+      <ion-item hidden>
         <ion-label href="" color="primary" style="text-align: center;"><ion-icon src="../../../../assets/missions/crown.svg" style="padding-right: 6px;"></ion-icon><a href="/leaderboard" style="text-decoration: none;">View Leaderboard</a></ion-label>
       </ion-item>
       <ion-item *ngFor="let item of progressmission">
