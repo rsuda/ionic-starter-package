@@ -16,7 +16,7 @@
       </ion-segment-button>
     </ion-segment>
     <ion-list *ngIf="selectedSegment == 'announcements' && data">
-      <ion-item *ngFor="let item of announcements" lines="full" button>
+      <ion-item *ngFor="let item of announcements" lines="full" button detail>
         <ion-label>
           <div>{{item.date}}</div>
           <div>{{item.title}}</div>
@@ -31,7 +31,7 @@
       </ion-item>
     </ion-list>
     <ion-list *ngIf="selectedSegment == 'messages' && data">
-      <ion-item *ngFor="let message of messages" lines="full" button>
+      <ion-item *ngFor="let message of messages" lines="full" button detail>
         <ion-label slot="start" text-wrap>
           <div>{{message.date}}</div>
           <div>{{message.title}}</div>

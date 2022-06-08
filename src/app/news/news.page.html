@@ -1,9 +1,33 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>news</ion-title>
-  </ion-toolbar>
-</ion-header>
-
+<ion-toolbar mode="md">
+  <ion-title>News</ion-title>
+  <ion-buttons slot="start" style="color: black;">
+    <ion-back-button defaultHref="/"></ion-back-button>
+  </ion-buttons>
+</ion-toolbar>
 <ion-content>
-
+  <ion-grid style="max-width: 1140px; margin: auto;">
+    <ion-row>
+      <ion-col *ngFor="let item of cards"
+        size-xs="12"
+        size-sm="6"
+        size-md="6"
+        size-lg="4"
+        size-xl="3"
+        >
+        <ion-card button>
+          <ion-card-header>
+            <ion-card-title style="font-size: 18px; text-transform: capitalize;">
+              {{item.title}}
+            </ion-card-title>
+            <ion-card-subtitle>
+              {{item.date}}
+            </ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content style="text-align: center;">
+            <img [src]="item.image">
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
