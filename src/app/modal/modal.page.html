@@ -1,9 +1,29 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>modal</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-
-</ion-content>
+<ion-conent>
+    <ion-item class="title-row" lines="full">
+      <ion-label>Achievement Blue Points</ion-label>
+      <ion-button slot="end" fill="clear" color="primary" (click)="dismiss()">
+        <ion-icon slot="icon-only" name="close-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label slot="start" class="body ion-text-wrap">
+        Accident Free
+      </ion-label>
+      <ion-label slot="end" class="body ion-text-wrap">
+        <div class="points">
+          <ion-icon  src="../../../../assets/icons/werner-points.svg" class="icon"></ion-icon>500
+        </div>
+      </ion-label>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label slot="start" class="body ion-text-wrap">
+        Clean CSA Inspections
+      </ion-label>
+      <ion-label slot="end" class="body ion-text-wrap">
+        <div class="points">
+          <ion-icon  src="../../../../assets/icons/werner-points.svg" class="icon"></ion-icon>20
+        </div>
+      </ion-label>
+    </ion-item>
+    <ion-button (click)="dismiss()" expand="block">CLOSE</ion-button>
+</ion-conent>

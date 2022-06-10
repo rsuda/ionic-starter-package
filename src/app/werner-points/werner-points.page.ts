@@ -1,7 +1,8 @@
 import { Component, OnInit} from '@angular/core';
 import { LoadingController } from '@ionic/angular';
 import { NgCircleProgressModule } from 'ng-circle-progress';
-
+import { ModalController } from '@ionic/angular';
+import { ModalPage } from '../modal/modal.page';
 
 interface mission {
   image: string;
@@ -46,7 +47,15 @@ const INPROGRESS: progressmission[] = [] = [
 })
 export class WernerPointsPage implements OnInit {
 
-  constructor(public loadingController: LoadingController) {
+  constructor(public loadingController: LoadingController, public modalController: ModalController) {
+  }
+
+  async presentModal() {
+    const modal = await this.modalController.create({
+      component: ModalPage,
+      cssClass: 'my-custom-class'
+    });
+    return await modal.present();
   }
 
   doughnutChart: any;

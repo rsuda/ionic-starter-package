@@ -22,6 +22,11 @@ ion-segment-button{
     color: #fff;
   }
 
+  .my-custom-class .modal-wrapper {
+    height: auto;
+    max-height: 400px;
+  }
+
   ion-segment{
     box-shadow: 0 4px 6px -6px #222;
     margin-bottom: 12px !important;

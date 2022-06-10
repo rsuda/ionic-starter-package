@@ -12,6 +12,11 @@
       <ion-back-button defaultHref="/werner-points" text="" mode="ios"></ion-back-button>
     </ion-buttons>
     <ion-title>Blue Coins</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="presentModal()">
+        <ion-icon name="information-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
   <ion-segment id="sg<NameOfTheSegment>" style="justify-content: start; width: 100% !important;" mode="md" value="in-progress" (ionChange)="segmentChanged($event)">
     <ion-segment-button id="sgb<NameOfTheSegmentButton>" value="in-progress">
