@@ -82,6 +82,10 @@ const routes: Routes = [
     path: 'modal-points',
     loadChildren: () => import('./modal-points/modal-points.module').then( m => m.ModalPointsPageModule)
   },
+  {
+    path: 'home-v3',
+    loadChildren: () => import('./home-v3/home-v3.module').then( m => m.HomeV3PageModule)
+  },
 ];
 @NgModule({
   imports: [

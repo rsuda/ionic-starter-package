@@ -1,0 +1,118 @@
+<ion-header>
+  <ion-toolbar mode="ios">
+      <ion-buttons slot="start">
+        <ion-avatar style="width: 28px; height: 28px;">
+          <a href="/profile"><img src="../../assets/icons/person.png"></a>
+        </ion-avatar>
+      </ion-buttons>
+      <ion-title><img style="vertical-align: middle;" src="../../assets/icons/logo.png"></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div style="margin: auto; max-width: 1140px;">
+    <ion-card button href="/current-job">
+      <ion-card-header>
+        <ion-card-title style="font-size: 18px;">
+          Current Job<ion-icon style="align-items: center; vertical-align: middle;" name="chevron-forward-outline"></ion-icon>
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list lines="none">
+          <ion-item>
+            <ion-label>
+              <div style="color: #7d7d7d">
+                Next Location
+              </div>
+              <div style="font-size: 16px; font-weight: 500;">
+                Phoenix Closures Greencastle, IN
+              </div>
+            </ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>
+              <div style="color: #7d7d7d">
+                Scheduled Arrival
+              </div>
+              <div style="font-size: 16px; font-weight: 500;">
+                May 27, 15:00
+              </div>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+    <ion-row>
+      <ion-slides [options]="{ slidesPerView: 'auto', zoom: false, grabCursor: true }">
+        <ion-slide *ngFor="let card of [0,1,2,3,4,5,6]" style="width: 250px; height: 200px;">
+          <ion-col>
+            <ion-card style="padding: 12px !important; margin: 0px;">
+              <ion-card-header style="padding: 0px; font-size: 16px; text-align: left;">
+                <span style="font-size: 16px; font-weight: 500; color: black;">Stop 2 to Destination</span>
+                <ion-icon name="ellipsis-horizontal" style="float: right;"></ion-icon>
+              </ion-card-header>
+              <ion-card-content style="text-align: left; padding: 3px;">
+                <div style="color: #7d7d7d">03/29 -T9637111HL</div>
+                <ion-chip style="margin-top: 6px;" outline color="warning">Submitted</ion-chip>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-slide>
+      </ion-slides>
+    </ion-row>
+    <ion-list>
+      <ion-item lines="none">
+        <ion-label style="font-size: 18px; font-weight: 500;">
+          Past Jobs
+        </ion-label>
+          <ion-select style="color: black;" interface="popover" placeholder="Filter">
+            <ion-select-option value="brown">All</ion-select-option>
+            <ion-select-option value="blonde">Submitted</ion-select-option>
+            <ion-select-option value="black">Missing</ion-select-option>
+            <ion-select-option value="red">Paid</ion-select-option>
+          </ion-select>
+      </ion-item>
+      <div *ngIf="data">
+        <ion-item *ngFor="let item of pastjobs" button href="/trip-details">
+          <ion-label text-wrap>
+            <div style="font-size: 16px; font-weight: 500;">
+              {{item.title}}
+            </div>
+            <div style="font-size: 16px; color: #7d7d7d;">
+              {{item.date}} - {{item.id}}
+            </div>
+          </ion-label>
+          <ion-chip color="warning" *ngIf="item.chip == 'Submitted'">
+            <ion-label>
+              {{item.chip}}
+            </ion-label>
+          </ion-chip>
+          <ion-chip color="success" *ngIf="item.chip == 'Paid'">
+            <ion-label>
+              {{item.chip}}
+            </ion-label>
+          </ion-chip>
+          <ion-chip color="danger" *ngIf="item.chip == 'Missing'">
+            <ion-label>
+              {{item.chip}}
+            </ion-label>
+          </ion-chip>
+        </ion-item>
+      </div>
+      <div *ngIf="!data">
+        <ion-item  *ngFor="let number of [0,1,2,3,4]">
+          <ion-label>
+            <p>
+              <ion-skeleton-text animated style="width: 30%"></ion-skeleton-text>
+            </p>
+            <p>
+              <ion-skeleton-text animated style="width: 20%"></ion-skeleton-text>
+            </p>
+          </ion-label>
+        </ion-item>
+      </div>
+
+    </ion-list>
+  </div>
+</ion-content>
+
