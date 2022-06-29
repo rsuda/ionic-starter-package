@@ -13,39 +13,53 @@
     </ion-buttons>
     <ion-title>Leaderboard</ion-title>
   </ion-toolbar>
-  <ion-segment style="justify-content: start;" id="sg<NameOfTheSegment>" mode="md" value="safe-miles">
+  <ion-segment style="justify-content: start;" id="sg<NameOfTheSegment>" mode="md" value="safe-miles" scrollable>
     <ion-segment-button id="sgb<NameOfTheSegmentButton>" value="safe-miles">
       <ion-label id="lbl<NameOfTheLabel>">Safe Miles</ion-label>
     </ion-segment-button>
     <ion-segment-button id="sgb<NameOfTheSegmentButton>" value="on-time">
-      <ion-label id="lbl<NameOfTheLabel>">On Time</ion-label>
+      <ion-label id="lbl<NameOfTheLabel>">Safe Stops</ion-label>
     </ion-segment-button>
     <ion-segment-button id="sgb<NameOfTheSegmentButton>" value="inspections">
       <ion-label id="lbl<NameOfTheLabel>">Inspections</ion-label>
     </ion-segment-button>
+    <ion-segment-button id="sgb<NameOfTheSegmentButton>" value="Accolades">
+      <ion-label id="lbl<NameOfTheLabel>">Accolades</ion-label>
+    </ion-segment-button>
+    <ion-segment-button id="sgb<NameOfTheSegmentButton>" value="learning">
+      <ion-label id="lbl<NameOfTheLabel>">Learning</ion-label>
+    </ion-segment-button>
+    <ion-segment-button id="sgb<NameOfTheSegmentButton>" value="leadership">
+      <ion-label id="lbl<NameOfTheLabel>">Leadership</ion-label>
+    </ion-segment-button>
+    <ion-segment-button id="sgb<NameOfTheSegmentButton>" value="Referrals">
+      <ion-label id="lbl<NameOfTheLabel>">Referrals</ion-label>
+    </ion-segment-button>
   </ion-segment>
-  <ion-card style="background-color: #F8F8F8; border: none;">
-    <ion-grid>
-      <ion-row>
-        <ion-col style="text-align: center;">
-          <div style="font-size: 14px; color: #7f7f7f; font-weight: 500;">
-            Your Ranking
-          </div>
-          <div style="color: black; font-size: 16px; font-weight: 500;">
-            #15/162
-          </div>
-        </ion-col>
-        <ion-col style="text-align: center;">
-          <div>
-            Cost Division
-          </div>
-          <div style="color: black; font-size: 16px; font-weight: 500;">
-            Dedicated Fleet
-          </div>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </ion-card>
+  <div style="max-width: 1140px; margin: auto;">
+    <ion-card style="background-color: #F8F8F8; border: none;">
+      <ion-grid style="padding: 12px;">
+        <ion-row>
+          <ion-col style="text-align: center;">
+            <div style="font-size: 14px; color: #7f7f7f; font-weight: 500;">
+              Your Ranking
+            </div>
+            <div style="color: black; font-size: 16px; font-weight: 500;">
+              #15/162
+            </div>
+          </ion-col>
+          <ion-col style="text-align: center;">
+            <div>
+              Cost Division
+            </div>
+            <div style="color: black; font-size: 16px; font-weight: 500;">
+              Dedicated Fleet
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card>
+  </div>
   <ion-list lines="full">
     <ion-item *ngFor="let item of people">
       <div slot="start" class="rank">{{item.rank}}</div>
@@ -56,6 +70,28 @@
       <ion-label slot="end" class="points" style="vertical-align: middle !important; text-align: center;">
         <ion-icon src="../../../../assets/icons/werner-points.svg" class="icon"></ion-icon>
         {{item.points}}
+      </ion-label>
+    </ion-item>
+    <ion-item class="item-background-color">
+      <div slot="start" class="rank">9</div>
+      <ion-avatar slot="start">
+        <img src="../../../../assets/people/woman1.png">
+      </ion-avatar>
+      <ion-label class="name">Rachel</ion-label>
+      <ion-label slot="end" class="points" style="vertical-align: middle !important; text-align: center;">
+        <ion-icon src="../../../../assets/icons/werner-points.svg" class="icon"></ion-icon>
+        3000
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <div slot="start" class="rank">9</div>
+      <ion-avatar slot="start">
+        <img src="../../../../assets/people/man1.png">
+      </ion-avatar>
+      <ion-label class="name">Daniel</ion-label>
+      <ion-label slot="end" class="points" style="vertical-align: middle !important; text-align: center;">
+        <ion-icon src="../../../../assets/icons/werner-points.svg" class="icon"></ion-icon>
+        2500
       </ion-label>
     </ion-item>
   </ion-list>

@@ -11,7 +11,7 @@
 
 <ion-content>
   <div style="margin: auto; max-width: 1140px;">
-    <ion-card button href="/current-job">
+    <ion-card button href="/current-job" style="margin-bottom: 6px;">
       <ion-card-header>
         <ion-card-title style="font-size: 18px;">
           Current Job<ion-icon style="align-items: center; vertical-align: middle;" name="chevron-forward-outline"></ion-icon>
@@ -43,76 +43,64 @@
       </ion-card-content>
     </ion-card>
     <ion-row>
+      <ion-row style="width: 100%; height: fit-content;">
+        <ion-col style="vertical-align: middle; align-items: center; display: block; align-content: center; margin: auto;">
+          <ion-segment style="text-align: left; align-items: left; margin-left: 12px !important;" mode="ios" value="in-progress" (ionChange)="segmentChanged($event)">
+            <ion-segment-button value="in-progress">
+              Past
+            </ion-segment-button>
+            <ion-segment-button value="completed" (click)="asyncSkeleton()">
+              Pre-Assigned
+            </ion-segment-button>
+          </ion-segment>
+        </ion-col>
+        <ion-col size="4" style="text-align: right;">
+          <ion-button color="secondary" fill="clear" style="margin: 0px;">View All</ion-button>
+        </ion-col>
+      </ion-row>
+
       <ion-slides [options]="{ slidesPerView: 'auto', zoom: false, grabCursor: true }">
-        <ion-slide *ngFor="let card of [0,1,2,3,4,5,6]" style="width: 250px; height: 200px;">
+        <ion-slide *ngFor="let card of pastjobs" style="width: 250px; height: fit-content;">
           <ion-col>
             <ion-card style="padding: 12px !important; margin: 0px;">
               <ion-card-header style="padding: 0px; font-size: 16px; text-align: left;">
-                <span style="font-size: 16px; font-weight: 500; color: black;">Stop 2 to Destination</span>
-                <ion-icon name="ellipsis-horizontal" style="float: right;"></ion-icon>
+                <ion-row>
+                  <ion-col size="10"><span style="font-size: 16px; font-weight: 500; color: black;">{{card.title}}</span></ion-col>
+                  <ion-col size="2"><ion-icon name="ellipsis-horizontal" style="float: right;"></ion-icon></ion-col>
+                </ion-row>
               </ion-card-header>
               <ion-card-content style="text-align: left; padding: 3px;">
-                <div style="color: #7d7d7d">03/29 -T9637111HL</div>
-                <ion-chip style="margin-top: 6px;" outline color="warning">Submitted</ion-chip>
+                <div style="color: #7d7d7d">{{card.date}} - {{card.id}}</div>
+                <ion-chip *ngIf="card.chip == 'Submitted'" style="margin-top: 6px;" outline color="warning">{{card.chip}}</ion-chip>
+                <ion-chip *ngIf="card.chip == 'Missing'" style="margin-top: 6px;" outline color="danger">{{card.chip}}</ion-chip>
+                <ion-chip *ngIf="card.chip == 'Paid'" style="margin-top: 6px;" outline color="success">{{card.chip}}</ion-chip>
               </ion-card-content>
             </ion-card>
           </ion-col>
         </ion-slide>
       </ion-slides>
-    </ion-row>
-    <ion-list>
-      <ion-item lines="none">
-        <ion-label style="font-size: 18px; font-weight: 500;">
-          Past Jobs
-        </ion-label>
-          <ion-select style="color: black;" interface="popover" placeholder="Filter">
-            <ion-select-option value="brown">All</ion-select-option>
-            <ion-select-option value="blonde">Submitted</ion-select-option>
-            <ion-select-option value="black">Missing</ion-select-option>
-            <ion-select-option value="red">Paid</ion-select-option>
-          </ion-select>
-      </ion-item>
-      <div *ngIf="data">
-        <ion-item *ngFor="let item of pastjobs" button href="/trip-details">
-          <ion-label text-wrap>
-            <div style="font-size: 16px; font-weight: 500;">
-              {{item.title}}
-            </div>
-            <div style="font-size: 16px; color: #7d7d7d;">
-              {{item.date}} - {{item.id}}
-            </div>
-          </ion-label>
-          <ion-chip color="warning" *ngIf="item.chip == 'Submitted'">
-            <ion-label>
-              {{item.chip}}
-            </ion-label>
-          </ion-chip>
-          <ion-chip color="success" *ngIf="item.chip == 'Paid'">
-            <ion-label>
-              {{item.chip}}
-            </ion-label>
-          </ion-chip>
-          <ion-chip color="danger" *ngIf="item.chip == 'Missing'">
-            <ion-label>
-              {{item.chip}}
-            </ion-label>
-          </ion-chip>
-        </ion-item>
-      </div>
-      <div *ngIf="!data">
-        <ion-item  *ngFor="let number of [0,1,2,3,4]">
-          <ion-label>
-            <p>
-              <ion-skeleton-text animated style="width: 30%"></ion-skeleton-text>
-            </p>
-            <p>
-              <ion-skeleton-text animated style="width: 20%"></ion-skeleton-text>
-            </p>
-          </ion-label>
-        </ion-item>
-      </div>
 
-    </ion-list>
+    </ion-row>
+    <ion-row>
+      <ion-col *ngFor="let item of cards"
+        size-xs="6"
+        size-sm="4"
+        size-md="4"
+        size-lg="3"
+        size-xl="2"
+        >
+        <ion-card button routerLink="/{{item.url}}" style="margin: 6px;">
+          <ion-card-header>
+            <ion-card-title style="font-size: 18px; text-transform: capitalize;">
+              {{item.title}}
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content style="text-align: center;">
+            <img [src]="item.image">
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
   </div>
 </ion-content>
 

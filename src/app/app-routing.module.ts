@@ -86,6 +86,10 @@ const routes: Routes = [
     path: 'home-v3',
     loadChildren: () => import('./home-v3/home-v3.module').then( m => m.HomeV3PageModule)
   },
+  {
+    path: 'location-feedback',
+    loadChildren: () => import('./location-feedback/location-feedback.module').then( m => m.LocationFeedbackPageModule)
+  },
 ];
 @NgModule({
   imports: [

@@ -13,7 +13,7 @@
     </ion-buttons>
     <ion-title>Blue Coins</ion-title>
     <ion-buttons slot="end">
-      <ion-button (click)="presentModal()">
+      <ion-button (click)="presentModal()" hidden>
         <ion-icon name="information-circle-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -31,7 +31,7 @@
   </ion-segment>
   <div *ngIf="selectedSegment=='completed' && !data">
     <ion-list lines="full">
-      <ion-item hidden>
+      <ion-item>
         <ion-label href="" color="primary" style="text-align: center;"><ion-icon src="../../../../assets/missions/crown.svg" style="padding-right: 6px;"></ion-icon><a href="/leaderboard" style="text-decoration: none;">View Leaderboard</a></ion-label>
       </ion-item>
       <ion-item *ngFor="let item of mission">
@@ -52,7 +52,7 @@
   </div>
   <div *ngIf="selectedSegment=='in-progress'">
     <ion-list lines="full">
-      <ion-item hidden>
+      <ion-item>
         <ion-label href="" color="primary" style="text-align: center;"><ion-icon src="../../../../assets/missions/crown.svg" style="padding-right: 6px;"></ion-icon><a href="/leaderboard" style="text-decoration: none;">View Leaderboard</a></ion-label>
       </ion-item>
       <ion-item *ngFor="let item of progressmission">
@@ -80,6 +80,7 @@
   </div>
 
   <div *ngIf="selectedSegment=='redeem' && !redeem" class="animate__animated animate__slideInUp animate__fast">
+    <ion-card>
     <ion-grid style="max-width: 720px; margin: auto; padding: 100px 36px;">
       <ion-row>
         <ion-col style="text-align: center; color: #636363; font-size: 16px; font-weight: 500;">
@@ -109,8 +110,10 @@
         </ion-col>
       </ion-row>
     </ion-grid>
+  </ion-card>
   </div>
   <div *ngIf="selectedSegment=='redeem' && redeem" class="animate__animated animate__slideInUp animate__fast">
+    <ion-card>
     <ion-grid style="max-width: 720px; margin: auto; padding: 100px 36px;">
       <ion-row hidden>
         <ion-col style="text-align: center; color: #636363; font-size: 16px; font-weight: 500;">
@@ -145,6 +148,7 @@
         </ion-col>
       </ion-row>
     </ion-grid>
+  </ion-card>
   </div>
 
   <div *ngIf="selectedSegment=='completed' && data">
